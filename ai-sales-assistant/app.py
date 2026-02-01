@@ -3,5 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 # from utils import generate_ai_insight
 
+#Telling streamlit what to display first on my web app
+
 st.title("AI Sales Insights Assistant")
-st.write("Upload your CSV file to get started")
+st.write("Upload your sales CSV file to get started")
+
+#creating a button for file upload in the UI
+
+uploaded_file = st.file_uploader("Upload your sales CSV" , type=["csv"])
+
+
+
+
