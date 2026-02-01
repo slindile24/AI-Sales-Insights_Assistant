@@ -13,13 +13,17 @@ st.write("Upload your sales CSV file to get started")
 uploaded_file = st.file_uploader("Upload your sales CSV" , type=["csv"])
 
 
-"""Read csv into pandas, read only when file is uploaded"""
+# Read csv into pandas, read only when file is uploaded
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
-"""Telling streamlit to display data first for user to confirm the file upload"""
+# Telling streamlit to display data first for user to confirm the file upload
 st.subheader("Preview of Your Data")
 st.dataframe(df.head())
+
+# So I wanted to show available columns first instead of assuming column names
+st.write("Columns in dataset: ")
+st.write(list(df.columns))
 
 
 
