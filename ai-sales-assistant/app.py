@@ -51,8 +51,8 @@ clean_df = df.dropna(subset=[date, price])
 st.write("Clean DF shape:", clean_df.shape)
 st.dataframe(clean_df.head(10))
 
-st.write("Column types:")
-st.write(df.dtypes)
+# st.write("Column types:")
+# st.write(df.dtypes)
 
 
 sales_over_time = clean_df.groupby([date])[price].sum()
