@@ -25,5 +25,10 @@ st.dataframe(df.head())
 st.write("Columns in dataset: ")
 st.write(list(df.columns))
 
+price = st.selectbox(
+    "Select the column that represents the price:",
+    df.columns
+    )
+
 
 
