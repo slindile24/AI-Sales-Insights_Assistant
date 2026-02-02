@@ -41,26 +41,21 @@ st.write(f"Average Order Value: ${average_order_value:,.2f}")
 
 #Now I want the user to select the date column and converted it into strings
 date = st.selectbox("Select date column:", df.columns)
-month = st.selectbox("Select month column:", df.columns)
-year = st.selectbox("Select year column", df.columns)
-
-df["full_date"] = pd.to_datetime(
-    dict(
-        year=df[year],
-        month=df[month],
-        day=df[date]
-    ),
-    errors="coerce"
-)
+df[date] = pd.to_datetime(df[date], errors="coerce")
 
 
 # Remove bad columns , missing price and date column
 df[price] = pd.to_numeric(df[price], errors="coerce")
 
-clean_df = df.dropna(subset=["full_date", price])
+clean_df = df.dropna(subset=[date, price])
+st.write("Clean DF shape:", clean_df.shape)
+st.dataframe(clean_df.head(10))
+
+st.write("Column types:")
+st.write(df.dtypes)
 
 
-sales_over_time = clean_df.groupby("full_date")[price].sum()
+sales_over_time = clean_df.groupby([date])[price].sum()
 
 st.subheader("Sales Over Time")
 
