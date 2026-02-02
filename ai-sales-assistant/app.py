@@ -39,6 +39,8 @@ average_order_value = df[price].mean()
 st.write(f"Total sales: ${total_sales:,.2f}")
 st.write(f"Average Order Value: ${average_order_value:,.2f}")
 
+#Now I want the user to select the 
+
 
 
 
