@@ -30,5 +30,15 @@ price = st.selectbox(
     df.columns
     )
 
+#calculating total sales and the average order value.
+total_sales = df[price].sum()
+average_order_value = df[price].mean()
+
+# I then saw figured that columns data type might be string so I decided to format it .
+
+st.write(f"Total sales: ${total_sales:,.2f}")
+st.write(f"Average Order Value: ${average_order_value:,.2f}")
+
+
 
 
