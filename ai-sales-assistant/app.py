@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from utils import generate_ai_insight,generate_data_summary
 # from utils import generate_ai_insight
 
 #Telling streamlit what to display first on my web app
@@ -67,6 +68,7 @@ ax.set_ylabel("Sales")
 
 st.pyplot(fig)
 
+summary = generate_data_summary(clean_df,date,price)
 
 
 
