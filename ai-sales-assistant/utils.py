@@ -1,7 +1,9 @@
 from dotenv import load_dotenv
 import os
+from openai import OpenAI
 
 load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 if __name__ == "__main__":
@@ -19,3 +21,26 @@ def generate_data_summary(df, date_col, price_col):
     The average order value is {average_order_value}
     """ 
     return summary
+
+def generate_ai_insight(summary,user_question):
+    """Sends sales summary and user_question to OpenAI for analysis"""
+
+    prompt = f"""
+
+    Business Analysis AI.
+
+
+    Sales Summary :
+    {summary}
+
+    Please give us a clear short business insight based on the data presented
+    """
+
+    response = client.chat.completions.create(
+        model="chatgpt-4o-latest",
+        messages=[
+            {"role":"system", "content": "Helpful business analyst"},
+            {"role":"user", "content": prompt}
+        ]
+    )
+    return response.choices[0].message.content
