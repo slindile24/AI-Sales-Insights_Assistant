@@ -68,7 +68,17 @@ ax.set_ylabel("Sales")
 
 st.pyplot(fig)
 
-summary = generate_data_summary(clean_df,date,price)
+summary = generate_data_summary(clean_df,date,price)#replaced arguments with our data 
+
+st.subheader("Ask the AI about your sales")
+
+user_question = st.text_input("Type the question you want to ask about your sales data:")
+
+if user_question:
+   st.write("Analyzing sales data")
+   ai_response = generate_ai_insight(summary,user_question)
+   st.success(ai_response)
+
 
 
 

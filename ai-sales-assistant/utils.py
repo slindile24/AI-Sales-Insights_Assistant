@@ -37,7 +37,7 @@ def generate_ai_insight(summary,user_question):
     """
 
     response = client.chat.completions.create(
-        model="chatgpt-4o-latest",
+        model="gpt-4.1-mini",
         messages=[
             {"role":"system", "content": "Helpful business analyst"},
             {"role":"user", "content": prompt}
