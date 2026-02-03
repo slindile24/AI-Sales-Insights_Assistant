@@ -51,14 +51,15 @@ clean_df = df.dropna(subset=[date, price])
 st.write("Clean DF shape:", clean_df.shape)
 st.dataframe(clean_df.head(10))
 
-# st.write("Column types:")
-# st.write(df.dtypes)
 
-
+# calculating the trend between date and time 
 sales_over_time = clean_df.groupby([date])[price].sum()
 
+
+#Heading of the chart
 st.subheader("Sales Over Time")
 
+#Plotting
 fig, ax = plt.subplots()
 sales_over_time.plot(ax=ax)
 ax.set_xlabel("Date")
