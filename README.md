@@ -24,7 +24,7 @@ An AI-powered web application that analyzes sales data and generates business in
 2. The system allows selection of relevant columns such as price and date.
 3. Data is cleaned and converted into appropriate formats.
 4. Sales metrics and visual trends are generated.
-5. A Large Language Model analyzes summarized data and answers user questions about business performance.
+5. A Large Language Model analyzes summarized data and answers user questions about business performance(whether sales increased or decreased).
 
 ---
 
