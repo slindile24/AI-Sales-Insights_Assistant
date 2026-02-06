@@ -34,7 +34,7 @@ An AI-powered web application that analyzes sales data and generates business in
 * **Pandas** – Data analysis and preprocessing
 * **Streamlit** – Interactive web application framework
 * **Matplotlib** – Data visualization
-* **OpenAI API** – Natural language insights generation
+* **OpenAI API** – Natural language insights generation(under process - credits required before api can respond)
 
 
 
